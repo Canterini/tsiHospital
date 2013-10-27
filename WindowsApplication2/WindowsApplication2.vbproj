@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62A46160-516B-4ABE-91F5-05D94F7C69DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WindowsApplication2.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsApplication2</RootNamespace>
+    <AssemblyName>WindowsApplication2</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WindowsApplication2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WindowsApplication2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bllContactoAdmin.vb" />
+    <Compile Include="bllDespartamento.vb" />
+    <Compile Include="bllPaciente.vb" />
+    <Compile Include="bllPersonal.vb" />
+    <Compile Include="dalContactoAdmin.vb" />
+    <Compile Include="dalDepartamento.vb" />
+    <Compile Include="dalPacientes.vb" />
+    <Compile Include="dalPersonal.vb" />
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministrarCamillas.Designer.vb">
+      <DependentUpon>FormAdministrarCamillas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdministrarCamillas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministrarDepartamentos.Designer.vb">
+      <DependentUpon>FormAdministrarDepartamentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdministrarDepartamentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministrarPacientes.Designer.vb">
+      <DependentUpon>FormAdministrarPacientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdministrarPacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAdministrarPersonal.Designer.vb">
+      <DependentUpon>formAdministrarPersonal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formAdministrarPersonal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormContactoAdmin.Designer.vb">
+      <DependentUpon>FormContactoAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormContactoAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiagnostico.Designer.vb">
+      <DependentUpon>FormDiagnostico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDiagnostico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFormadePago.Designer.vb">
+      <DependentUpon>FormFormadePago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormFormadePago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSistemaHospital.Designer.vb">
+      <DependentUpon>FormSistemaHospital.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormSistemaHospital.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdministrarCamillas.resx">
+      <DependentUpon>FormAdministrarCamillas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdministrarDepartamentos.resx">
+      <DependentUpon>FormAdministrarDepartamentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdministrarPacientes.resx">
+      <DependentUpon>FormAdministrarPacientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAdministrarPersonal.resx">
+      <DependentUpon>formAdministrarPersonal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormContactoAdmin.resx">
+      <DependentUpon>FormContactoAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDiagnostico.resx">
+      <DependentUpon>FormDiagnostico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFormadePago.resx">
+      <DependentUpon>FormFormadePago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSistemaHospital.resx">
+      <DependentUpon>FormSistemaHospital.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
