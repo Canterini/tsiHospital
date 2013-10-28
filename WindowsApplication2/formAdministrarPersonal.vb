@@ -68,6 +68,7 @@
             Catch ex As SqlClient.SqlException ' en caso de erros existe una excepcion paraque no sse  caiga el programa
                 MessageBox.Show("El rut ingresado ya existe", "Error RUT", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.txtRut.Text = ""
+
             Catch ex As ArgumentException
                 MessageBox.Show("Ingrese NUEVAMENTE EL RUT", "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.txtRut.Text = ""

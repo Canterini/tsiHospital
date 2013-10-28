@@ -119,6 +119,12 @@
     <Compile Include="FormDiagnostico.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormDietetica.Designer.vb">
+      <DependentUpon>FormDietetica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDietetica.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormFormadePago.Designer.vb">
       <DependentUpon>FormFormadePago.vb</DependentUpon>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDiagnostico.resx">
       <DependentUpon>FormDiagnostico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDietetica.resx">
+      <DependentUpon>FormDietetica.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFormadePago.resx">
       <DependentUpon>FormFormadePago.vb</DependentUpon>
