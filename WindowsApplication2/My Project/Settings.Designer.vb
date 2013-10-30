@@ -63,6 +63,17 @@ Namespace My
                 Return CType(Me("PRUEBA1ConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=PHENOMII-PC;Initial Catalog=Hospital_Universitario;Integrated Securit"& _ 
+            "y=True")>  _
+        Public ReadOnly Property Hospital_UniversitarioConnectionString() As String
+            Get
+                Return CType(Me("Hospital_UniversitarioConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

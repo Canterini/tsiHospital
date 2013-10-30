@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class tb_direccion
+Partial Class FormAdministrarPacientes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,12 +23,12 @@ Partial Class tb_direccion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(tb_direccion))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAdministrarPacientes))
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.tb_contraindicaciones = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.cb_idcamilla = New System.Windows.Forms.ComboBox()
         Me.cb_departamento = New System.Windows.Forms.ComboBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -55,6 +55,8 @@ Partial Class tb_direccion
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.ErrorGeneral = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.tb_diag = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.ErrorGeneral, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -94,18 +96,19 @@ Partial Class tb_direccion
         Me.Label16.TabIndex = 75
         Me.Label16.Text = "Contraindicaciones"
         '
-        'ComboBox4
+        'cb_idcamilla
         '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(303, 401)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox4.TabIndex = 74
+        Me.cb_idcamilla.FormattingEnabled = True
+        Me.cb_idcamilla.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"})
+        Me.cb_idcamilla.Location = New System.Drawing.Point(303, 399)
+        Me.cb_idcamilla.Name = "cb_idcamilla"
+        Me.cb_idcamilla.Size = New System.Drawing.Size(121, 21)
+        Me.cb_idcamilla.TabIndex = 74
         '
         'cb_departamento
         '
         Me.cb_departamento.FormattingEnabled = True
-        Me.cb_departamento.Items.AddRange(New Object() {"Cardiologia", "Traumatologia", "Pediatria", "Oftalmologia", "Psicologia"})
+        Me.cb_departamento.Items.AddRange(New Object() {"Cardiología", "Kinesiología", "Oftalmología", "Oncología", "Pediatría", "Traumatología", "Urología"})
         Me.cb_departamento.Location = New System.Drawing.Point(303, 363)
         Me.cb_departamento.Name = "cb_departamento"
         Me.cb_departamento.Size = New System.Drawing.Size(121, 21)
@@ -185,8 +188,8 @@ Partial Class tb_direccion
         '
         Me.tb_estadoc.AutoCompleteCustomSource.AddRange(New String() {"Soltero", "Casado", "Divorciado", "Viudo"})
         Me.tb_estadoc.FormattingEnabled = True
-        Me.tb_estadoc.Items.AddRange(New Object() {"Activo", "Inactivo"})
-        Me.tb_estadoc.Location = New System.Drawing.Point(297, 214)
+        Me.tb_estadoc.Items.AddRange(New Object() {"Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a", "Comprometido/a"})
+        Me.tb_estadoc.Location = New System.Drawing.Point(297, 176)
         Me.tb_estadoc.Name = "tb_estadoc"
         Me.tb_estadoc.Size = New System.Drawing.Size(121, 21)
         Me.tb_estadoc.TabIndex = 62
@@ -196,7 +199,7 @@ Partial Class tb_direccion
         Me.tb_sexo.AutoCompleteCustomSource.AddRange(New String() {"Masculino", "Femenino"})
         Me.tb_sexo.FormattingEnabled = True
         Me.tb_sexo.Items.AddRange(New Object() {"Femenino", "Masculino", "Otro"})
-        Me.tb_sexo.Location = New System.Drawing.Point(297, 184)
+        Me.tb_sexo.Location = New System.Drawing.Point(297, 214)
         Me.tb_sexo.Name = "tb_sexo"
         Me.tb_sexo.Size = New System.Drawing.Size(100, 21)
         Me.tb_sexo.TabIndex = 61
@@ -276,7 +279,7 @@ Partial Class tb_direccion
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(161, 214)
+        Me.Label25.Location = New System.Drawing.Point(161, 179)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(62, 13)
         Me.Label25.TabIndex = 51
@@ -285,7 +288,7 @@ Partial Class tb_direccion
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(164, 184)
+        Me.Label26.Location = New System.Drawing.Point(164, 214)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(31, 13)
         Me.Label26.TabIndex = 50
@@ -322,17 +325,35 @@ Partial Class tb_direccion
         '
         Me.ErrorGeneral.ContainerControl = Me
         '
-        'tb_direccion
+        'tb_diag
+        '
+        Me.tb_diag.Location = New System.Drawing.Point(663, 150)
+        Me.tb_diag.Name = "tb_diag"
+        Me.tb_diag.Size = New System.Drawing.Size(100, 20)
+        Me.tb_diag.TabIndex = 79
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(553, 150)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(78, 13)
+        Me.Label1.TabIndex = 78
+        Me.Label1.Text = "N° Diagnóstico"
+        '
+        'FormAdministrarPacientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(794, 650)
+        Me.Controls.Add(Me.tb_diag)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.tb_contraindicaciones)
         Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.ComboBox4)
+        Me.Controls.Add(Me.cb_idcamilla)
         Me.Controls.Add(Me.cb_departamento)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.Button4)
@@ -360,7 +381,7 @@ Partial Class tb_direccion
         Me.Controls.Add(Me.Label29)
         Me.Controls.Add(Me.Label14)
         Me.DoubleBuffered = True
-        Me.Name = "tb_direccion"
+        Me.Name = "FormAdministrarPacientes"
         CType(Me.ErrorGeneral, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -370,7 +391,7 @@ Partial Class tb_direccion
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents tb_contraindicaciones As System.Windows.Forms.TextBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
+    Friend WithEvents cb_idcamilla As System.Windows.Forms.ComboBox
     Friend WithEvents cb_departamento As System.Windows.Forms.ComboBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Button4 As System.Windows.Forms.Button
@@ -397,4 +418,6 @@ Partial Class tb_direccion
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents ErrorGeneral As System.Windows.Forms.ErrorProvider
+    Friend WithEvents tb_diag As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

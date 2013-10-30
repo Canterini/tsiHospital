@@ -1,10 +1,12 @@
-﻿Public Class formAdministrarPersonal
+﻿Imports System.Data.SqlClient
+Public Class formAdministrarPersonal
     Dim Personal As New bllPersonal()
+    Dim conn As New SqlConnection()
 
 
-   
 
-    
+
+
     Private Sub btnAgregarPersonal_Click(sender As Object, e As EventArgs) Handles btnAgregarPersonal.Click
         Dim a As Boolean = True
         ErrorGeneral.Clear()
@@ -40,7 +42,7 @@
 
         End If
 
-       
+
 
 
         If (Me.txtCorreo.Text.Trim = "") Then
@@ -68,10 +70,14 @@
             Catch ex As SqlClient.SqlException ' en caso de erros existe una excepcion paraque no sse  caiga el programa
                 MessageBox.Show("El rut ingresado ya existe", "Error RUT", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.txtRut.Text = ""
+                conn.Close()
+                Me.Close()
+
             Catch ex As ArgumentException
                 MessageBox.Show("Ingrese NUEVAMENTE EL RUT", "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.txtRut.Text = ""
-
+                conn.Close()
+                Me.Close()
             End Try
         End If
 
@@ -94,6 +100,7 @@
             Catch ex As SqlClient.SqlException ' en caso de error si el rut no existe (excepcion apunta al cliente SQL)
                 MessageBox.Show("El rut no existe", "Error RUT", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 rut_l = ""
+
             Catch ex As ArgumentException
                 MessageBox.Show("Verifique el rut ingresado e intentelo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Catch ex As Exception
@@ -124,6 +131,14 @@
     End Sub
 
     Private Sub txtDireccion_TextChanged(sender As Object, e As EventArgs) Handles tb_direccion.TextChanged
+
+    End Sub
+
+    Private Sub formAdministrarPersonal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub cboCargo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCargo.SelectedIndexChanged
 
     End Sub
 End Class

@@ -1,5 +1,8 @@
-﻿Public Class tb_direccion
+﻿Imports System.Data.SqlClient
+Public Class FormAdministrarPacientes
     Dim paciente As New bllPaciente()
+    Dim conn As New SqlConnection()
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
 
@@ -116,7 +119,47 @@
         End If
 
 
+        Try
+            paciente.insertar(tb_rut.Text, tb_nombres.Text, tb_apellidos.Text, tb_sexo.Text, tb_estadoc.Text, tb_edad.Text, tbb_direccion.Text, tb_aseguradora.Text, cb_departamento.SelectedIndex, cb_idcamilla.SelectedIndex, DateTimePicker4.Text, DateTimePicker3.Text, tb_contraindicaciones.Text, tb_diag.Text)
+            MessageBox.Show("Paciente ingresado exitosamente", "Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.tb_rut.Text = ""
+            Me.tb_nombres.Text = ""
+            Me.tb_apellidos.Text = ""
+            Me.tb_sexo.Text = ""
+            Me.tb_estadoc.Text = ""
+            Me.tb_edad.ResetText()
+            Me.tbb_direccion.Text = ""
+            Me.tb_aseguradora.Text = ""
+            Me.cb_departamento.Text = ""
+            Me.cb_idcamilla.ResetText()
+            Me.DateTimePicker4.ResetText()
+            Me.DateTimePicker3.ResetText()
+            Me.tb_contraindicaciones.Text = ""
+            Me.tb_diag.Text = ""
+            conn.Close()
+        Catch ex As SqlClient.SqlException
+            MessageBox.Show("El rut ingresado ya existe", "Error RUT", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
+            Me.tb_rut.Text = ""
+            Me.tb_nombres.Text = ""
+            Me.tb_apellidos.Text = ""
+            Me.tb_sexo.Text = ""
+            Me.tb_estadoc.Text = ""
+            Me.tb_edad.ResetText()
+            Me.tbb_direccion.Text = ""
+            Me.tb_aseguradora.Text = ""
+            Me.cb_departamento.Text = ""
+            Me.cb_idcamilla.ResetText()
+            Me.DateTimePicker4.ResetText()
+            Me.DateTimePicker3.ResetText()
+            Me.tb_contraindicaciones.Text = ""
+            Me.tb_diag.Text = ""
+            conn.Close()
+        Catch ex As ArgumentException
+            MessageBox.Show("Favor revise los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.tb_rut.Text = ""
+            conn.Close()
+        End Try
 
 
 
@@ -147,11 +190,15 @@
 
     End Sub
 
-    Private Sub ComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox4.SelectedIndexChanged
+    Private Sub ComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_idcamilla.SelectedIndexChanged
 
     End Sub
 
     Private Sub tb_contraindicaciones_TextChanged(sender As Object, e As EventArgs) Handles tb_contraindicaciones.TextChanged
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
 End Class

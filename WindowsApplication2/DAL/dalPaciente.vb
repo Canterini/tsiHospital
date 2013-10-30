@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class dalPacientes
+Public Class dalPaciente
 
     Dim conn As New SqlConnection()
 
@@ -13,11 +13,11 @@ Public Class dalPacientes
 
     End Sub
 
-    Public Function insertar(ByVal rut As String, ByVal nombres As String, ByVal apellidos As String, ByVal estadocivil As String, ByVal sexo As String, ByVal edad As Integer, ByVal direccion As String, ByVal aseguradora As String, ByVal nombredepto As String, ByVal numerocamilla As String, ByVal fechaingreso As Date, ByVal fechasalida As Date, ByVal contraindicaciones As String) As Integer
+    Public Function insertar(ByVal rut As String, ByVal nombres As String, ByVal apellidos As String, ByVal estadocivil As String, ByVal sexo As String, ByVal edad As Integer, ByVal direccion As String, ByVal aseguradora As String, ByVal nombredepartamento As String, ByVal idcamilla As Integer, ByVal fechaingreso As Date, ByVal fechasalida As Date, ByVal contraindicaciones As String, ByVal diag As String) As Integer
         Dim comando As New SqlCommand()
         Dim resultado As Integer
         comando.Connection = conn
-        comando.CommandText = "insert into Paciente values(@prut,@pnombres,@papellidos,@pestadocivil,@psexo,@pedad,@pdireccion,@paseguradora,@pnombredepto,@pnumerocamilla, @pfechaingreso, @pfechasalida, @pcontraindicaciones)"
+        comando.CommandText = "insert into Paciente values(@prut,@pnombres,@papellidos,@pestadocivil,@psexo,@pedad,@pdireccion,@paseguradora,@pnombredepto,@pidcamilla, @pfechaingreso, @pfechasalida, @pcontraindicaciones, @piddiagnostico)"
         comando.Parameters.AddWithValue("prut", rut)
         comando.Parameters.AddWithValue("pnombres", nombres)
         comando.Parameters.AddWithValue("papellidos", apellidos)
@@ -26,14 +26,23 @@ Public Class dalPacientes
         comando.Parameters.AddWithValue("pedad", CInt(edad))
         comando.Parameters.AddWithValue("pdireccion", direccion)
         comando.Parameters.AddWithValue("paseguradora", aseguradora)
-        comando.Parameters.AddWithValue("pnombredepto", nombredepto)
-        comando.Parameters.AddWithValue("pnumerocamilla", numerocamilla)
+        comando.Parameters.AddWithValue("pnombredepto", nombredepartamento)
+        comando.Parameters.AddWithValue("pidcamilla", idcamilla)
         comando.Parameters.AddWithValue("pfechaingreso", fechaingreso)
         comando.Parameters.AddWithValue("pfechasalida", fechasalida)
         comando.Parameters.AddWithValue("pcontraindicaciones", contraindicaciones)
+        comando.Parameters.AddWithValue("piddiagnostico", diag)
         conn.Open()
         resultado = comando.ExecuteNonQuery()
         conn.Close()
+        Return resultado
+    End Function
+
+
+    Public Function cerrar()
+        Dim resultado As String
+        conn.Close()
+        resultado = MessageBox.Show("Conexion terminada")
         Return resultado
     End Function
 

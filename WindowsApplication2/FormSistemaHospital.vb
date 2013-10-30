@@ -7,7 +7,7 @@ Public Class FormSistemaHospital
     End Sub
 
     Private Sub btnAdministrarPacientes_Click(sender As Object, e As EventArgs) Handles btnAdminstrarPacientes.Click
-        tb_direccion.Show()
+        FormAdministrarPacientes.Show()
     End Sub
 
     Private Sub btnAdminitrarDepartamentos_Click(sender As Object, e As EventArgs) Handles btnAdminitrarDepartamentos.Click

@@ -22,21 +22,23 @@ Partial Class FormDiagnostico
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.cboRequiere = New System.Windows.Forms.ComboBox()
+        Me.tb_receta = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.btnGenerarReceta = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.tb_diag = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.tb_rutpac = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.tb_rutdoc = New System.Windows.Forms.TextBox()
+        Me.tb_ndiag = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label5
@@ -49,128 +51,121 @@ Partial Class FormDiagnostico
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "Registro de Diagnóstico"
         '
-        'btnSalir
+        'tb_receta
         '
-        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.Location = New System.Drawing.Point(598, 540)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(75, 23)
-        Me.btnSalir.TabIndex = 27
-        Me.btnSalir.Text = "Salir"
-        Me.btnSalir.UseVisualStyleBackColor = True
+        Me.tb_receta.Location = New System.Drawing.Point(454, 193)
+        Me.tb_receta.Multiline = True
+        Me.tb_receta.Name = "tb_receta"
+        Me.tb_receta.Size = New System.Drawing.Size(310, 185)
+        Me.tb_receta.TabIndex = 35
         '
-        'cboRequiere
+        'Button1
         '
-        Me.cboRequiere.FormattingEnabled = True
-        Me.cboRequiere.Items.AddRange(New Object() {"Sí Aplica", "No Aplicca"})
-        Me.cboRequiere.Location = New System.Drawing.Point(395, 443)
-        Me.cboRequiere.Name = "cboRequiere"
-        Me.cboRequiere.Size = New System.Drawing.Size(121, 21)
-        Me.cboRequiere.TabIndex = 26
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(592, 454)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 34
+        Me.Button1.Text = "Salir"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(290, 443)
+        Me.Label7.Location = New System.Drawing.Point(445, 178)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(88, 13)
-        Me.Label7.TabIndex = 25
-        Me.Label7.Text = "Requiere Receta"
+        Me.Label7.Size = New System.Drawing.Size(45, 13)
+        Me.Label7.TabIndex = 33
+        Me.Label7.Text = "Receta:"
         '
-        'btnGenerarReceta
+        'Button2
         '
-        Me.btnGenerarReceta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGenerarReceta.Location = New System.Drawing.Point(425, 540)
-        Me.btnGenerarReceta.Name = "btnGenerarReceta"
-        Me.btnGenerarReceta.Size = New System.Drawing.Size(132, 23)
-        Me.btnGenerarReceta.TabIndex = 24
-        Me.btnGenerarReceta.Text = "Generar Receta"
-        Me.btnGenerarReceta.UseVisualStyleBackColor = True
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(321, 454)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(132, 23)
+        Me.Button2.TabIndex = 32
+        Me.Button2.Text = "Generar Receta"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button5
+        'Button3
         '
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(293, 540)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 23
-        Me.Button5.Text = "Modificar"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(152, 454)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 31
+        Me.Button3.Text = "Guardar"
+        Me.Button3.UseVisualStyleBackColor = True
         '
-        'Button6
+        'tb_diag
         '
-        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(158, 540)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 22
-        Me.Button6.Text = "Guardar"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(260, 210)
-        Me.TextBox5.Multiline = True
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(323, 200)
-        Me.TextBox5.TabIndex = 21
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(124, 76)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(118, 13)
-        Me.Label8.TabIndex = 20
-        Me.Label8.Text = "Número de Diagnóstico"
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(260, 160)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(165, 20)
-        Me.TextBox6.TabIndex = 19
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(121, 119)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(76, 13)
-        Me.Label9.TabIndex = 18
-        Me.Label9.Text = "Rut del Doctor"
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(260, 112)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(165, 20)
-        Me.TextBox7.TabIndex = 17
+        Me.tb_diag.Location = New System.Drawing.Point(34, 193)
+        Me.tb_diag.Multiline = True
+        Me.tb_diag.Name = "tb_diag"
+        Me.tb_diag.Size = New System.Drawing.Size(323, 200)
+        Me.tb_diag.TabIndex = 30
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(124, 210)
+        Me.Label10.Location = New System.Drawing.Point(31, 178)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(63, 13)
-        Me.Label10.TabIndex = 16
+        Me.Label10.TabIndex = 29
         Me.Label10.Text = "Diagnóstico"
         '
-        'TextBox8
+        'Label8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(260, 69)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(165, 20)
-        Me.TextBox8.TabIndex = 15
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(16, 89)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(118, 13)
+        Me.Label8.TabIndex = 41
+        Me.Label8.Text = "Número de Diagnóstico"
+        '
+        'tb_rutpac
+        '
+        Me.tb_rutpac.Location = New System.Drawing.Point(528, 130)
+        Me.tb_rutpac.Name = "tb_rutpac"
+        Me.tb_rutpac.Size = New System.Drawing.Size(165, 20)
+        Me.tb_rutpac.TabIndex = 40
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(389, 89)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(76, 13)
+        Me.Label9.TabIndex = 39
+        Me.Label9.Text = "Rut del Doctor"
+        '
+        'tb_rutdoc
+        '
+        Me.tb_rutdoc.Location = New System.Drawing.Point(528, 82)
+        Me.tb_rutdoc.Name = "tb_rutdoc"
+        Me.tb_rutdoc.Size = New System.Drawing.Size(165, 20)
+        Me.tb_rutdoc.TabIndex = 38
+        '
+        'tb_ndiag
+        '
+        Me.tb_ndiag.Location = New System.Drawing.Point(152, 82)
+        Me.tb_ndiag.Name = "tb_ndiag"
+        Me.tb_ndiag.Size = New System.Drawing.Size(165, 20)
+        Me.tb_ndiag.TabIndex = 37
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(121, 167)
+        Me.Label11.Location = New System.Drawing.Point(389, 137)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(86, 13)
-        Me.Label11.TabIndex = 14
+        Me.Label11.TabIndex = 36
         Me.Label11.Text = "Rut del Paciente"
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
         '
         'FormDiagnostico
         '
@@ -178,41 +173,41 @@ Partial Class FormDiagnostico
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.WindowsApplication2.My.Resources.Resources.logo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(795, 632)
-        Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.cboRequiere)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.btnGenerarReceta)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.TextBox5)
+        Me.ClientSize = New System.Drawing.Size(842, 499)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.tb_rutpac)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.tb_rutdoc)
+        Me.Controls.Add(Me.tb_ndiag)
         Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.tb_receta)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.tb_diag)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label5)
         Me.DoubleBuffered = True
         Me.Name = "FormDiagnostico"
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents btnSalir As System.Windows.Forms.Button
-    Friend WithEvents cboRequiere As System.Windows.Forms.ComboBox
+    Friend WithEvents tb_receta As System.Windows.Forms.TextBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents btnGenerarReceta As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents tb_diag As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents tb_rutpac As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents tb_rutdoc As System.Windows.Forms.TextBox
+    Friend WithEvents tb_ndiag As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 End Class

@@ -7,15 +7,16 @@
     Dim _edad As Integer
     Dim _direccion As String
     Dim _aseguradora As String
-    Dim _nombredepto As String
-    Dim _numerocamilla As Integer
+    Dim _nombredepartamento As String
+    Dim _idcamilla As Integer
     Dim _fechaingreso As Date
     Dim _fechasalida As Date
     Dim _contraindicacion As String
-    Dim Paciente As New dalPacientes
+    Dim _diag As Integer
+    Dim Paciente As New dalPaciente
 
     Public Sub New()
-        Paciente = New dalPacientes()
+        Paciente = New dalPaciente()
 
     End Sub
 
@@ -103,23 +104,23 @@
 
         End Set
     End Property
-    Public Property nombredepto() As String
+    Public Property nombredepartamento() As String
         Get
-            Return _nombredepto
+            Return _nombredepartamento
         End Get
         Set(value As String)
 
-            _nombredepto = value
+            _nombredepartamento = value
 
         End Set
     End Property
-    Public Property numerocamilla() As String
+    Public Property idcamilla() As Integer
         Get
-            Return _numerocamilla
+            Return _idcamilla
         End Get
-        Set(value As String)
+        Set(value As Integer)
 
-            _numerocamilla = value
+            _idcamilla = value
 
         End Set
     End Property
@@ -157,8 +158,18 @@
         End Set
     End Property
 
+    Public Property diag() As Integer
+        Get
+            Return _diag
 
-    Public Sub New(ByVal rut As String, ByVal nombres As String, ByVal apellidos As String, ByVal estadocivil As String, ByVal sexo As String, ByVal edad As Integer, ByVal direccion As String, ByVal aseguradora As String, ByVal nombredepto As String, ByVal numerocamilla As String, ByVal fechaingreso As Date, ByVal fechasalida As Date, ByVal contraindicaciones As String)
+        End Get
+        Set(value As Integer)
+            _diag = value
+        End Set
+    End Property
+
+
+    Public Sub New(ByVal rut As String, ByVal nombres As String, ByVal apellidos As String, ByVal estadocivil As String, ByVal sexo As String, ByVal edad As Integer, ByVal direccion As String, ByVal aseguradora As String, ByVal nombredepartamento As String, ByVal idcamilla As Integer, ByVal fechaingreso As Date, ByVal fechasalida As Date, ByVal contraindicaciones As String)
         Me.rut = rut
         Me.nombres = nombres
         Me.apellidos = apellidos
@@ -167,15 +178,16 @@
         Me.edad = edad
         Me.direccion = direccion
         Me.aseguradora = aseguradora
-        Me.nombredepto = nombredepto
-        Me.numerocamilla = numerocamilla
+        Me.nombredepartamento = nombredepartamento
+        Me.idcamilla = idcamilla
         Me.fechaingreso = fechaingreso
         Me.fechasalida = fechasalida
         Me.contraindicacion = contraindicaciones
+        Me.diag = _diag
     End Sub
 
 
-    Public Function insertar(ByVal rut As String, ByVal nombres As String, ByVal apellidos As String, ByVal estadocivil As String, ByVal sexo As String, ByVal edad As Integer, ByVal direccion As String, ByVal aseguradora As String, ByVal nombredepto As String, ByVal numerocamilla As String, ByVal fechaingreso As Date, ByVal fechasalida As Date, ByVal contraindicaciones As String)
+    Public Function insertar(ByVal rut As String, ByVal nombres As String, ByVal apellidos As String, ByVal estadocivil As String, ByVal sexo As String, ByVal edad As Integer, ByVal direccion As String, ByVal aseguradora As String, ByVal nombredepartamento As String, ByVal idcamilla As Integer, ByVal fechaingreso As Date, ByVal fechasalida As Date, ByVal contraindicaciones As String, ByVal diag As String) As Integer
         Me.rut = rut
         Me.nombres = nombres
         Me.apellidos = apellidos
@@ -184,12 +196,13 @@
         Me.edad = edad
         Me.direccion = direccion
         Me.aseguradora = aseguradora
-        Me.nombredepto = nombredepto
-        Me.numerocamilla = numerocamilla
+        Me.nombredepartamento = nombredepartamento
+        Me.idcamilla = idcamilla
         Me.fechaingreso = fechaingreso
         Me.fechasalida = fechasalida
         Me.contraindicacion = contraindicaciones
-        Return Paciente.insertar(rut, nombres, apellidos, estadocivil, sexo, edad, direccion, aseguradora, nombredepto, numerocamilla, fechaingreso, fechasalida, contraindicaciones)
+        Me.diag = _diag
+        Return Paciente.insertar(rut, nombres, apellidos, estadocivil, sexo, edad, direccion, aseguradora, nombredepartamento, idcamilla, fechaingreso, fechasalida, contraindicaciones, diag)
 
     End Function
 

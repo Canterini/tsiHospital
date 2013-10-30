@@ -13,13 +13,13 @@ Public Class dalDepartamento
 
     End Sub
 
-    Public Function insertar(ByVal nombre As String, ByVal tipo As String) As Integer
+    Public Function insertar(ByVal nombre As String) As Integer
         Dim comando As New SqlCommand()
         Dim resultado As Integer
         comando.Connection = conn
-        comando.CommandText = "insert into Departamentos values(@pnombre,@ptipo)"
+        comando.CommandText = "insert into Departamentos values(@pnombre)"
         comando.Parameters.AddWithValue("pnombre", nombre)
-        comando.Parameters.AddWithValue("ptipo", tipo)
+
 
         conn.Open()
         resultado = comando.ExecuteNonQuery()

@@ -69,14 +69,16 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bllContactoAdmin.vb" />
-    <Compile Include="bllDespartamento.vb" />
-    <Compile Include="bllPaciente.vb" />
-    <Compile Include="bllPersonal.vb" />
-    <Compile Include="dalContactoAdmin.vb" />
-    <Compile Include="dalDepartamento.vb" />
-    <Compile Include="dalPacientes.vb" />
-    <Compile Include="dalPersonal.vb" />
+    <Compile Include="BLL\bllContactoAdmin.vb" />
+    <Compile Include="BLL\bllDespartamento.vb" />
+    <Compile Include="BLL\bllDiagnostico.vb" />
+    <Compile Include="BLL\bllPaciente.vb" />
+    <Compile Include="BLL\bllPersonal.vb" />
+    <Compile Include="DAL\dalContactoAdmin.vb" />
+    <Compile Include="DAL\dalDepartamento.vb" />
+    <Compile Include="DAL\dalDiagnostico.vb" />
+    <Compile Include="DAL\dalPaciente.vb" />
+    <Compile Include="DAL\dalPersonal.vb" />
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
@@ -193,6 +195,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

@@ -26,9 +26,7 @@ Partial Class FormAdministrarDepartamentos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.b_salir = New System.Windows.Forms.Button()
         Me.bt_modificar = New System.Windows.Forms.Button()
-        Me.b_agregar = New System.Windows.Forms.Button()
-        Me.cboTipo = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnAgregardepto = New System.Windows.Forms.Button()
         Me.txtNombreDepto = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -63,37 +61,19 @@ Partial Class FormAdministrarDepartamentos
         Me.bt_modificar.Text = "Modificar Departamento"
         Me.bt_modificar.UseVisualStyleBackColor = True
         '
-        'b_agregar
+        'btnAgregardepto
         '
-        Me.b_agregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.b_agregar.Location = New System.Drawing.Point(117, 310)
-        Me.b_agregar.Name = "b_agregar"
-        Me.b_agregar.Size = New System.Drawing.Size(139, 23)
-        Me.b_agregar.TabIndex = 13
-        Me.b_agregar.Text = "Agregar Departamento"
-        Me.b_agregar.UseVisualStyleBackColor = True
-        '
-        'cboTipo
-        '
-        Me.cboTipo.FormattingEnabled = True
-        Me.cboTipo.Items.AddRange(New Object() {"Traumatología", "Psicologia", "Urologia", "Dermatologia", "Cirugía", "Urgencia"})
-        Me.cboTipo.Location = New System.Drawing.Point(325, 177)
-        Me.cboTipo.Name = "cboTipo"
-        Me.cboTipo.Size = New System.Drawing.Size(121, 21)
-        Me.cboTipo.TabIndex = 12
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(143, 177)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(113, 13)
-        Me.Label4.TabIndex = 11
-        Me.Label4.Text = "Tipo de Departamento"
+        Me.btnAgregardepto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregardepto.Location = New System.Drawing.Point(117, 310)
+        Me.btnAgregardepto.Name = "btnAgregardepto"
+        Me.btnAgregardepto.Size = New System.Drawing.Size(139, 23)
+        Me.btnAgregardepto.TabIndex = 13
+        Me.btnAgregardepto.Text = "Agregar Departamento"
+        Me.btnAgregardepto.UseVisualStyleBackColor = True
         '
         'txtNombreDepto
         '
-        Me.txtNombreDepto.Location = New System.Drawing.Point(325, 126)
+        Me.txtNombreDepto.Location = New System.Drawing.Point(343, 179)
         Me.txtNombreDepto.Name = "txtNombreDepto"
         Me.txtNombreDepto.Size = New System.Drawing.Size(100, 20)
         Me.txtNombreDepto.TabIndex = 10
@@ -101,7 +81,7 @@ Partial Class FormAdministrarDepartamentos
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(127, 126)
+        Me.Label5.Location = New System.Drawing.Point(145, 179)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(129, 13)
         Me.Label5.TabIndex = 9
@@ -116,9 +96,7 @@ Partial Class FormAdministrarDepartamentos
         Me.ClientSize = New System.Drawing.Size(663, 458)
         Me.Controls.Add(Me.b_salir)
         Me.Controls.Add(Me.bt_modificar)
-        Me.Controls.Add(Me.b_agregar)
-        Me.Controls.Add(Me.cboTipo)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.btnAgregardepto)
         Me.Controls.Add(Me.txtNombreDepto)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label1)
@@ -131,9 +109,7 @@ Partial Class FormAdministrarDepartamentos
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents b_salir As System.Windows.Forms.Button
     Friend WithEvents bt_modificar As System.Windows.Forms.Button
-    Friend WithEvents b_agregar As System.Windows.Forms.Button
-    Friend WithEvents cboTipo As System.Windows.Forms.ComboBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents btnAgregardepto As System.Windows.Forms.Button
     Friend WithEvents txtNombreDepto As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

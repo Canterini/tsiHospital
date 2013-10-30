@@ -34,10 +34,9 @@
 
     End Sub
 
-    Public Function insertar(ByVal nombre As String, ByVal tipo As String) As Integer
+    Public Function insertar(ByVal nombre As String) As Integer
         Me.nombre = nombre
-        Me.tipo = tipo
-        Return Departamento.insertar(nombre, tipo)
+        Return Departamento.insertar(nombre)
     End Function
 
 
